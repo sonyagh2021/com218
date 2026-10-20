@@ -155,3 +155,16 @@ La base de datos protege la integridad de la informacion:
 - No permite eliminar un cliente o vendedor si ya tiene pedidos.
 - No permite eliminar un producto si aparece en pedidos.
 - Al eliminar un pedido, se eliminan automaticamente sus detalles.
+
+## 12. Script para DTE e IVA (El Salvador)
+
+Se incluye el script `dte_iva.py` para leer archivos DTE en JSON y generar:
+
+- `iva_declaracion.csv`: detalle normalizado para apoyo de declaración IVA.
+- `iva_resumen.json`: totales por tipo de operación y errores de lectura.
+
+Ejemplo de uso:
+
+```powershell
+python dte_iva.py --input-dir "C:\dte" --output-csv "iva_declaracion.csv" --output-summary "iva_resumen.json" --nit-contribuyente "0614-123456-102-3"
+```
